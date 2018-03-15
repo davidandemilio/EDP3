@@ -9,19 +9,21 @@ namespace TDA
 {
   
 
-    public class Nodo<T> : IComparable<T>
+    public class Nodo<T,K> : IComparable<K>
     {
         public T valor { get; set; }
 
-        public Nodo<T> izquierdo { get; set; }
+        public K llave { get; set; }
 
-        public Nodo<T> derecho { get; set; }
+        public Nodo<T,K> izquierdo { get; set; }
 
-        public Nodo<T> padre { get; set; }
+        public Nodo<T, K> derecho { get; set; }
 
-        public ComparadorNodosDelegate<T> comparador;
+        public Nodo<T, K> padre { get; set; }
 
-        public Nodo(T _value, ComparadorNodosDelegate<T> _comparador)
+        public ComparadorNodosDelegate<K> comparador;
+
+        public Nodo(T _value, ComparadorNodosDelegate<K> _comparador)
         {
             this.valor = _value;
             this.izquierdo = null;
@@ -29,22 +31,22 @@ namespace TDA
             comparador = _comparador;
         }
 
-        public int CompareTo(T _other)
+        public int CompareTo(K _other)
         {
-            return comparador(this.valor, _other);
+            return comparador(this.llave, _other);
         }
     }
 
-    public class ArbolBinarioBusqueda<T>
+    public class ArbolBinarioBusqueda<T,K>
     {
-        public Nodo<T> Raiz { get; set; }
+        public Nodo<T,K> Raiz { get; set; }
 
         public ArbolBinarioBusqueda()
         {
             Raiz = null;
         }
 
-        public void Eliminar(T _key)
+        public void Eliminar(K _key)
         {
             if (Raiz == null)
             {
@@ -67,7 +69,7 @@ namespace TDA
             }
         }
 
-        public void EliminacionInterna(Nodo<T> _padre, Nodo<T> _actual, T _key, string hijo)
+        public void EliminacionInterna(Nodo<T,K> _padre, Nodo<T,K> _actual, K _key, string hijo)
         {
             if (_actual.CompareTo(_key) == 0)
             {
@@ -89,10 +91,13 @@ namespace TDA
                     if (hijo == "derecho")
                     {
                         _padre.derecho = _actual.izquierdo;
+                        _actual.izquierdo.padre = _padre;
+
                     }
                     else
                     {
                         _padre.izquierdo = _actual.izquierdo;
+                        _actual.izquierdo.padre = _padre;
                     }
                 }
                 else if (_actual.derecho != null && _actual.izquierdo == null)
@@ -100,21 +105,23 @@ namespace TDA
                     if (hijo == "derecho")
                     {
                         _padre.derecho = _actual.derecho;
+                        _actual.derecho.padre = _padre;
                     }
                     else
                     {
                         _padre.izquierdo = _actual.derecho;
+                        _actual.derecho.padre = _padre;
                     }
                 }
                 //Borrar un nodo con dos subarboles hijos
                 if (_actual.derecho != null && _actual.izquierdo != null)
                 {
-                    Nodo<T> nodo_Temp = _actual.derecho;
+                    Nodo<T,K> nodo_Temp = _actual.derecho;
                     while (nodo_Temp.izquierdo != null)
                     {
                         nodo_Temp = nodo_Temp.izquierdo;
                     }
-                    Eliminar(nodo_Temp.valor);
+                    Eliminar(nodo_Temp.llave);
                     _actual.valor = nodo_Temp.valor;
                 }
             }
@@ -128,16 +135,16 @@ namespace TDA
             }
         }
 
-        private void equilibrar() {
+        private void equilibrar(Nodo<T,K> ACT) {
 
         }
 
-        public void EnOrden(RecorridoDelegate<T> _recorrido)
+        public void EnOrden(RecorridoDelegate<T,K> _recorrido)
         {
             RecorridoEnOrdenInterno(_recorrido, Raiz);
         }
 
-        public void Insertar(Nodo<T> _nuevo)
+        public void Insertar(Nodo<T, K> _nuevo)
         {
             if (Raiz == null)
             {
@@ -149,28 +156,29 @@ namespace TDA
             }
         }
 
-        public Nodo<T> ObtenerRaiz()
+        public Nodo<T, K> ObtenerRaiz()
         {
             return Raiz;
         }
 
-        public void PostOrden(RecorridoDelegate<T> _recorrido)
+        public void PostOrden(RecorridoDelegate<T, K> _recorrido)
         {
             RecorridoPostOrdenInterno(_recorrido, Raiz);
         }
 
-        public void PreOrden(RecorridoDelegate<T> _recorrido)
+        public void PreOrden(RecorridoDelegate<T, K> _recorrido)
         {
             RecorridoPreOrdenInterno(_recorrido, Raiz);
         }
 
-        private void InsercionInterna(Nodo<T> _actual, Nodo<T> _nuevo)
+        private void InsercionInterna(Nodo<T, K> _actual, Nodo<T, K> _nuevo)
         {
-            if (_actual.CompareTo(_nuevo.valor) < 0)
+            if (_actual.CompareTo(_nuevo.llave) < 0)
             {
                 if (_actual.derecho == null)
                 {
                     _actual.derecho = _nuevo;
+                    _nuevo.padre = _actual;
                     
                 }
                 else
@@ -178,11 +186,12 @@ namespace TDA
                     InsercionInterna(_actual.derecho, _nuevo);
                 }
             }
-            else if (_actual.CompareTo(_nuevo.valor) > 0)
+            else if (_actual.CompareTo(_nuevo.llave) > 0)
             {
                 if (_actual.izquierdo == null)
                 {
                     _actual.izquierdo = _nuevo;
+                    _nuevo.padre = _actual;
                 }
                 else
                 {
@@ -191,7 +200,7 @@ namespace TDA
             }
         } //Fin de inserción interna.
 
-        private void RecorridoEnOrdenInterno(RecorridoDelegate<T> _recorrido, Nodo<T> _actual)
+        private void RecorridoEnOrdenInterno(RecorridoDelegate<T, K> _recorrido, Nodo<T, K> _actual)
         {
             if (_actual != null)
             {
@@ -203,7 +212,7 @@ namespace TDA
             }
         }
 
-        private void RecorridoPostOrdenInterno(RecorridoDelegate<T> _recorrido, Nodo<T> _actual)
+        private void RecorridoPostOrdenInterno(RecorridoDelegate<T, K> _recorrido, Nodo<T, K> _actual)
         {
             if (_actual != null)
             {
@@ -215,7 +224,7 @@ namespace TDA
             }
         }
 
-        private void RecorridoPreOrdenInterno(RecorridoDelegate<T> _recorrido, Nodo<T> _actual)
+        private void RecorridoPreOrdenInterno(RecorridoDelegate<T, K> _recorrido, Nodo<T, K> _actual)
         {
             if (_actual != null)
             {
