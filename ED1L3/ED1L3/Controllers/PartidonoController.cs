@@ -10,41 +10,39 @@ using TDA;
 using ED1L3.Models;
 using ED1L3.DBContest;
 using System.Net;
-namespace ED1L3.Controllers
+namespace ED1L3.Models
 {
-    public class PartidoController : Controller
+    public class PartidonoController : Controller
     {
-
-
-        DefaultConnection<Partido,DateTime> db = DefaultConnection<Partido, DateTime>.getInstance;
-        // GET: Partido
+        DefaultConnection<Partido, int> db = DefaultConnection<Partido, int>.getInstance;
+        // GET: Partidono
         public ActionResult Index()
         {
             return View(db.datos.ToList());
         }
 
-        // GET: Partido/Details/5
+        // GET: Partidono/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Partido/Create
+        // GET: Partidono/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Partido/Create
+        // POST: Partidono/Create
         [HttpPost]
         public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais_1,Pais_2,Estadio ")]Partido partido)
         {
             try
             {
                 // TODO: Add insert logic here
-                Nodo<Partido,    DateTime> nueva_pais = new Nodo<Partido,DateTime>(partido, null);
+                Nodo<Partido, int> nueva_pais = new Nodo<Partido, int>(partido, null);
                 nueva_pais.valor = partido;
-                nueva_pais.llave = partido.FechaPartido;
+                nueva_pais.llave = partido.Nopartido;
                 db.datos.Clear();
                 db.AB.Insertar(nueva_pais);
                 db.AB.EnOrden(asignar_comparacion);
@@ -57,30 +55,29 @@ namespace ED1L3.Controllers
                 return View();
             }
         }
-
-        public void pasar_a_lista(Nodo<Partido,DateTime> actual)
+        public void pasar_a_lista(Nodo<Partido, int> actual)
         {
             db.datos.Add(actual.valor);
         }
 
-        public int comparador_fechas(DateTime actual, DateTime nuevo)
+        public int comparador_no(int actual, int nuevo)
         {
             return actual.CompareTo(nuevo);
 
         }
 
-        public void asignar_comparacion(Nodo<Partido,DateTime> actual)
+        public void asignar_comparacion(Nodo<Partido, int> actual)
         {
-            actual.comparador = comparador_fechas;
+            actual.comparador = comparador_no;
         }
 
-        // GET: Partido/Edit/5
+        // GET: Partidono/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Partido/Edit/5
+        // POST: Partidono/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -96,14 +93,14 @@ namespace ED1L3.Controllers
             }
         }
 
-        // GET: Partido/Delete/5
-        public ActionResult Delete(DateTime id)
+        // GET: Partidono/Delete/5
+        public ActionResult Delete(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Partido partido_buscado = db.datos.Find(x => x.FechaPartido == id);
+            Partido partido_buscado = db.datos.Find(x => x.Nopartido == id);
 
             if (partido_buscado == null)
             {
@@ -115,12 +112,12 @@ namespace ED1L3.Controllers
 
         // POST: Partido/Delete/5
         [HttpPost]
-        public ActionResult Delete(DateTime id, FormCollection collection)
+        public ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
                 // TODO: Add delete logic here
-                db.AB.Eliminar(db.datos.First(x => x.FechaPartido == id).FechaPartido);
+                db.AB.Eliminar(db.datos.First(x => x.Nopartido == id).Nopartido);
                 db.datos.Clear();
                 db.AB.EnOrden(asignar_comparacion);
                 db.AB.EnOrden(pasar_a_lista);
