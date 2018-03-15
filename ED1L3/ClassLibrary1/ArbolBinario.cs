@@ -123,6 +123,7 @@ namespace TDA
                     }
                     Eliminar(nodo_Temp.llave);
                     _actual.valor = nodo_Temp.valor;
+                    _actual.llave = nodo_Temp.llave;
                 }
             }
             else if (_actual.CompareTo(_key) < 0)
