@@ -5,18 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 namespace TDA.Interfaces
 {
-    interface IArbolBinario<T>
+    interface IArbolBinario<T,K>
     {
-        void Insertar(Nodo<T> _nuevo);
+        void Insertar(Nodo<T,K> _nuevo);
 
-        void Eliminar(T _key);
+        void Eliminar(K _key);
 
-        Nodo<T> ObtenerRaiz();
+        Nodo<T,K> ObtenerRaiz();
 
-        void EnOrden(RecorridoDelegate<T> _recorrido);
+        void EnOrden(RecorridoDelegate<T,K> _recorrido);
 
-        void PreOrden(RecorridoDelegate<T> _recorrido);
+        void PreOrden(RecorridoDelegate<T,K> _recorrido);
 
-        void PostOrden(RecorridoDelegate<T> _recorrido);
+        void PostOrden(RecorridoDelegate<T,K> _recorrido);
     }
 }

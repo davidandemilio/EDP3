@@ -3,3 +3,8 @@ C:\Users\godin\Documents\Visual Studio 2015\Projects\EDLab02\Lab02_ArbolBinario\
 C:\Users\godin\Documents\Visual Studio 2015\Projects\EDLab02\Lab02_ArbolBinario\TDA\obj\Debug\TDA.dll
 C:\Users\godin\Documents\Visual Studio 2015\Projects\EDLab02\Lab02_ArbolBinario\TDA\obj\Debug\TDA.pdb
 C:\Users\godin\Documents\Visual Studio 2015\Projects\EDLab02\Lab02_ArbolBinario\TDA\obj\Debug\TDA.csprojResolveAssemblyReference.cache
+C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ClassLibrary1\bin\Debug\TDA.dll
+C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ClassLibrary1\bin\Debug\TDA.pdb
+C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ClassLibrary1\obj\Debug\TDA.csprojResolveAssemblyReference.cache
+C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ClassLibrary1\obj\Debug\TDA.dll
+C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ClassLibrary1\obj\Debug\TDA.pdb
