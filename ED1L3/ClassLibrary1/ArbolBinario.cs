@@ -46,7 +46,90 @@ namespace TDA
 
         public void Eliminar(T _key)
         {
-            throw new NotImplementedException();
+            if (Raiz == null)
+            {
+                throw new NullReferenceException();
+            }
+            else if (Raiz.CompareTo(_key) == 0)
+            {
+                Raiz = null;
+            }
+            else
+            {
+                if (Raiz.CompareTo(_key) < 0)
+                {
+                    EliminacionInterna(Raiz, Raiz.derecho, _key, "derecho");
+                }
+                else if (Raiz.CompareTo(_key) > 0)
+                {
+                    EliminacionInterna(Raiz, Raiz.izquierdo, _key, "izquierdo");
+                }
+            }
+        }
+
+        public void EliminacionInterna(Nodo<T> _padre, Nodo<T> _actual, T _key, string hijo)
+        {
+            if (_actual.CompareTo(_key) == 0)
+            {
+                // Borrar un nodo sin hijos
+                if (_actual.derecho == null && _actual.izquierdo == null)
+                {
+                    if (hijo == "derecho")
+                    {
+                        _padre.derecho = null;
+                    }
+                    else
+                    {
+                        _padre.izquierdo = null;
+                    }
+                }
+                //Borrar un nodo con un subarbol hijo
+                if (_actual.derecho == null && _actual.izquierdo != null)
+                {
+                    if (hijo == "derecho")
+                    {
+                        _padre.derecho = _actual.izquierdo;
+                    }
+                    else
+                    {
+                        _padre.izquierdo = _actual.izquierdo;
+                    }
+                }
+                else if (_actual.derecho != null && _actual.izquierdo == null)
+                {
+                    if (hijo == "derecho")
+                    {
+                        _padre.derecho = _actual.derecho;
+                    }
+                    else
+                    {
+                        _padre.izquierdo = _actual.derecho;
+                    }
+                }
+                //Borrar un nodo con dos subarboles hijos
+                if (_actual.derecho != null && _actual.izquierdo != null)
+                {
+                    Nodo<T> nodo_Temp = _actual.derecho;
+                    while (nodo_Temp.izquierdo != null)
+                    {
+                        nodo_Temp = nodo_Temp.izquierdo;
+                    }
+                    Eliminar(nodo_Temp.valor);
+                    _actual.valor = nodo_Temp.valor;
+                }
+            }
+            else if (_actual.CompareTo(_key) < 0)
+            {
+                EliminacionInterna(_actual, _actual.derecho, _key, "derecho");
+            }
+            else if (_actual.CompareTo(_key) > 0)
+            {
+                EliminacionInterna(_actual, _actual.izquierdo, _key, "izquierdo");
+            }
+        }
+
+        private void equilibrar() {
+
         }
 
         public void EnOrden(RecorridoDelegate<T> _recorrido)
@@ -88,6 +171,7 @@ namespace TDA
                 if (_actual.derecho == null)
                 {
                     _actual.derecho = _nuevo;
+                    
                 }
                 else
                 {
