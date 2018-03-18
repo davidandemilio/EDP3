@@ -97,13 +97,18 @@ namespace ED1L3.Controllers
         }
 
         // GET: Partido/Delete/5
-        public ActionResult Delete(DateTime id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Partido partido_buscado = db.datos.Find(x => x.FechaPartido == id);
+            DateTime myDate = DateTime.Parse("01/12/2001");
+            if (!string.IsNullOrEmpty(id))
+            {
+                myDate = DateTime.Parse(id.Replace("-", "/"));
+            }
+            Partido partido_buscado = db.datos.Find(x => x.FechaPartido == myDate);
 
             if (partido_buscado == null)
             {
@@ -115,12 +120,18 @@ namespace ED1L3.Controllers
 
         // POST: Partido/Delete/5
         [HttpPost]
-        public ActionResult Delete(DateTime id, FormCollection collection)
+        public ActionResult Delete(string id, FormCollection collection)
         {
             try
             {
+
+                DateTime myDate=DateTime.Parse("01/12/2005");
+                if (!string.IsNullOrEmpty(id))
+                {
+                    myDate = DateTime.Parse(id.Replace("-", "/"));
+                }
                 // TODO: Add delete logic here
-                db.AB.Eliminar(db.datos.First(x => x.FechaPartido == id).FechaPartido);
+                db.AB.Eliminar(db.datos.First(x => x.FechaPartido == myDate).FechaPartido);
                 db.datos.Clear();
                 db.AB.EnOrden(asignar_comparacion);
                 db.AB.EnOrden(pasar_a_lista);
