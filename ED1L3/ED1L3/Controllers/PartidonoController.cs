@@ -102,11 +102,11 @@ namespace ED1L3.Models
             {
                 while (node != null)
                 {
-                    if (comparador_no(node.valor.Nopartido, target) < 0)
+                    if (comparador_no(node.valor.Nopartido, target) > 0)
                     {
                         node = node.izquierdo;
                     }
-                    else if (comparador_no(node.valor.Nopartido, target) > 0)
+                    else if (comparador_no(node.valor.Nopartido, target) < 0)
                     {
                         node = node.derecho;
                     }

@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using TDA.Interfaces;
+using System.IO;
+
 namespace TDA
 {
-
-
     public class Nodo<T, K> : IComparable<K>
     {
         public T valor { get; set; }
@@ -41,6 +41,7 @@ namespace TDA
 
     public class ArbolBinarioBusqueda<T, K>
     {
+        System.IO.StreamWriter file = new System.IO.StreamWriter("~//App_Data//");
         public Nodo<T, K> Raiz { get; set; }
 
         public ArbolBinarioBusqueda()
@@ -56,36 +57,32 @@ namespace TDA
             }
             else if (Raiz.CompareTo(_key) == 0)
             {
-                  if (Raiz.derecho == null)
-                  {
-                      Raiz = Raiz.izquierdo;
-                  }
-                  else if (Raiz.izquierdo == null)
-                  {
-                      Raiz = Raiz.derecho;
-                  }
-                  else
-                  {
-                   Nodo<T, K> nodo_Temp = Raiz.derecho;
-                      Nodo<T, K> padre_nodo_Temp = null;
-                      int cont = 0;
-                      while (nodo_Temp.izquierdo != null)
-                      {
-                          nodo_Temp = nodo_Temp.izquierdo;
-                          cont++;
-                      }
-                      padre_nodo_Temp = nodo_Temp.padre;
-                      Eliminar(nodo_Temp.llave);
-                      Raiz.valor = nodo_Temp.valor;
-                      Raiz.llave = nodo_Temp.llave;
+                if (Raiz.derecho == null)
+                {
+                    Raiz = Raiz.izquierdo;
+                }
+                else if (Raiz.izquierdo == null)
+                {
+                    Raiz = Raiz.derecho;
+                }
+                else
+                {
+                    Nodo<T, K> nodo_Temp = Raiz.derecho;
+                    Nodo<T, K> padre_nodo_Temp = null;
+                    int cont = 0;
+                    while (nodo_Temp.izquierdo != null)
+                    {
+                        nodo_Temp = nodo_Temp.izquierdo;
+                        cont++;
+                    }
+                    padre_nodo_Temp = nodo_Temp.padre;
+                    Eliminar(nodo_Temp.llave);
+                    Raiz.valor = nodo_Temp.valor;
+                    Raiz.llave = nodo_Temp.llave;
+
+                }
 
 
-
-                    
-                      
-                  }
-
-              
             }
             else
             {
@@ -98,7 +95,12 @@ namespace TDA
                     EliminacionInterna(Raiz, Raiz.izquierdo, _key, "izquierdo");
                 }
             }
+            Nuevolog.Eliminacion(w,r);
         }
+
+        Log Nuevolog = new Log();
+        StreamWriter w = File.AppendText("~//App_Data//");
+        StreamReader r = File.OpenText("~//App_Data//");
 
         public void EliminacionInterna(Nodo<T, K> _padre, Nodo<T, K> _actual, K _key, string hijo)
         {
@@ -187,6 +189,7 @@ namespace TDA
                 {
                     EliminacionInterna(_actual, _actual.izquierdo, _key, "izquierdo");
                 }
+            Nuevolog.EliminacionINT(w, r);
         }
 
      
@@ -260,9 +263,9 @@ namespace TDA
                 }
 
                 nodo_inicio = nodo_inicio.padre;
-            }         
+            }
 
-
+            Nuevolog.ActualizarVal(w,r);
 
 
 
@@ -313,6 +316,7 @@ namespace TDA
                 Nodo_des.f_e = 0;
                 Nodo_des_der.f_e = 0;
             }
+            Nuevolog.ROTSIMPIZQ(w,r);
         }
 
 
@@ -378,6 +382,7 @@ namespace TDA
                     break;
             }
             Iz_Nodo_des_de.f_e = 0;
+            Nuevolog.ROTDOBIZQ(w,r);
         }
 
        
@@ -424,6 +429,7 @@ namespace TDA
                 Nododes.f_e = 0;
                 Nodo_des_iz.f_e = 0;
             }
+            Nuevolog.ROTSIMPDER(w,r);
 
         }
 
@@ -490,6 +496,7 @@ namespace TDA
                     break;
             }
             Nodo_des_iz_der.f_e = 0;
+            Nuevolog.ROTDOBDER(w,r);
         }
         public void EnOrden(RecorridoDelegate<T,K> _recorrido)
         {
@@ -506,6 +513,7 @@ namespace TDA
             {
                 InsercionInterna(Raiz, _nuevo);
             }
+            Nuevolog.incercion(w,r);
         }
 
         public Nodo<T, K> ObtenerRaiz()
@@ -554,6 +562,7 @@ namespace TDA
                     InsercionInterna(_actual.izquierdo, _nuevo);
                 }
             }
+            Nuevolog.incercionINT(w,r);
         } //Fin de inserción interna.
 
         private void RecorridoEnOrdenInterno(RecorridoDelegate<T, K> _recorrido, Nodo<T, K> _actual)
