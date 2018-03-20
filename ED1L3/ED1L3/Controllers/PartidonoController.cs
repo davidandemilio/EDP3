@@ -10,11 +10,36 @@ using TDA;
 using ED1L3.Models;
 using ED1L3.DBContest;
 using System.Net;
+using ED1L3.Controllers;
+
 namespace ED1L3.Models
 {
     public class PartidonoController : Controller
     {
         DefaultConnection<Partido, int> db = DefaultConnection<Partido, int>.getInstance;
+
+        public ActionResult CargaArchivo(HttpPostedFileBase archivo)
+        {
+            List<Nodo<Partido, int>> nodos_a_insertar = new List<Nodo<Partido, int>>();
+            Nodo<Partido, int> nuevo;
+
+            db.datos.Clear();
+            Carga_de_Archivo<Partido, int> archivo_json = new Carga_de_Archivo<Partido, int>();
+            nodos_a_insertar = archivo_json.Cargajsoninterna(archivo, Server);
+            for (int i = 0; i < nodos_a_insertar.Count; i++)
+            {
+                nuevo = nodos_a_insertar[i];
+                nuevo.llave = nuevo.valor.Nopartido;
+
+                db.datos.Clear();
+                db.AB.Insertar(nuevo);
+                db.AB.EnOrden(asignar_comparacion);
+                db.AB.EnOrden(pasar_a_lista);
+            }
+
+            return RedirectToAction("Index");
+        }
+
         // GET: Partidono
         public ActionResult Index()
         {
@@ -35,7 +60,7 @@ namespace ED1L3.Models
 
         // POST: Partidono/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais_1,Pais_2,Estadio ")]Partido partido)
+        public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais1,Pais2,Estadio ")]Partido partido)
         {
             try
             {
@@ -94,7 +119,7 @@ namespace ED1L3.Models
         }
 
         // GET: Partidono/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
