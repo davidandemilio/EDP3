@@ -41,7 +41,7 @@ namespace TDA
 
     public class ArbolBinarioBusqueda<T, K>
     {
-        System.IO.StreamWriter file = new System.IO.StreamWriter("~//App_Data//");
+        System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\carlo\Desktop\Pablo Herrera\bit.txt");
         public Nodo<T, K> Raiz { get; set; }
 
         public ArbolBinarioBusqueda()
@@ -99,8 +99,8 @@ namespace TDA
         }
 
         Log Nuevolog = new Log();
-        StreamWriter w = File.AppendText("~//App_Data//");
-        StreamReader r = File.OpenText("~//App_Data//");
+        StreamWriter w = File.AppendText(@"C:\Users\carlo\Desktop\Pablo Herrera\bit.txt");
+        StreamReader r = File.OpenText(@"C:C:\Users\carlo\Desktop\Pablo Herrera\bit.txt");
 
         public void EliminacionInterna(Nodo<T, K> _padre, Nodo<T, K> _actual, K _key, string hijo)
         {
