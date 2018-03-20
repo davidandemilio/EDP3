@@ -98,8 +98,8 @@ namespace TDA
         }
 
         Log Nuevolog = new Log();
-        StreamWriter w = File.AppendText(SERVIDOR.MapPath("");
-        StreamReader r = File.OpenText(@"C:\Bitacora.txt");
+        StreamWriter w = File.AppendText("");
+        StreamReader r = File.OpenText("");
 
         public void EliminacionInterna(Nodo<T, K> _padre, Nodo<T, K> _actual, K _key, string hijo)
         {
