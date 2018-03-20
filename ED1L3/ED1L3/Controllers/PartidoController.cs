@@ -17,6 +17,29 @@ namespace ED1L3.Controllers
 
 
         DefaultConnection<Partido,DateTime> db = DefaultConnection<Partido, DateTime>.getInstance;
+
+        public ActionResult CargaArchivo(HttpPostedFileBase archivo)
+        {
+            List<Nodo<Partido, DateTime>> nodos_a_insertar = new List<Nodo<Partido, DateTime>>();
+            Nodo<Partido, DateTime> nuevo;
+
+            db.datos.Clear();
+            Carga_de_Archivo<Partido, DateTime> archivo_json = new Carga_de_Archivo<Partido, DateTime>();
+            nodos_a_insertar = archivo_json.Cargajsoninterna(archivo, Server);
+            for (int i = 0; i < nodos_a_insertar.Count; i++)
+            {
+                nuevo = nodos_a_insertar[i];
+                nuevo.llave = nuevo.valor.FechaPartido;
+
+                db.datos.Clear();
+                db.AB.Insertar(nuevo);
+                db.AB.EnOrden(asignar_comparacion);
+                db.AB.EnOrden(pasar_a_lista);
+            }
+
+            return RedirectToAction("Index");
+        }
+
         // GET: Partido
         public ActionResult Index()
         {
@@ -86,7 +109,7 @@ namespace ED1L3.Controllers
 
         // POST: Partido/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais_1,Pais_2,Estadio ")]Partido partido)
+        public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais1,Pais2,Estadio ")]Partido partido)
         {
             try
             {

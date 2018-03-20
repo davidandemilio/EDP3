@@ -120,65 +120,65 @@ C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ED1L3\obj\Debug\
 C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ED1L3\obj\Debug\ED1L3.pdb
 C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ED1L3\bin\TDA.dll
 C:\Users\godin\Documents\Visual Studio 2015\Projects\EDP3\ED1L3\ED1L3\bin\TDA.pdb
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\ApplicationInsights.config
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\csc.exe
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\vbc.exe
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\VBCSCompiler.exe
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\ED1L3.dll.config
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\ED1L3.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\ED1L3.pdb
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Antlr3.Runtime.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.Agent.Intercept.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.DependencyCollector.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.PerfCounterCollector.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.ServerTelemetryChannel.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.Web.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.WindowsServer.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.ApplicationInsights.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Newtonsoft.Json.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Helpers.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Mvc.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Optimization.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Razor.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.WebPages.Deployment.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.WebPages.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.WebPages.Razor.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\TDA.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\WebGrease.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\TDA.pdb
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.DependencyCollector.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.ServerTelemetryChannel.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.Web.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.AI.WindowsServer.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.ApplicationInsights.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Helpers.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Mvc.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Optimization.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.Razor.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.WebPages.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.WebPages.Deployment.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\System.Web.WebPages.Razor.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Antlr3.Runtime.pdb
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\Newtonsoft.Json.xml
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.Helpers.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.Mvc.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.Optimization.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.Razor.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.WebPages.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.WebPages.Deployment.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\bin\es\System.Web.WebPages.Razor.resources.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\obj\Debug\ED1L3.csprojResolveAssemblyReference.cache
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\obj\Debug\ED1L3.dll
-C:\Users\carlo\Desktop\Pablo Herrera\Github\EDP3\ED1L3\ED1L3\obj\Debug\ED1L3.pdb
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\ApplicationInsights.config
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\csc.exe
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\vbc.exe
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\VBCSCompiler.exe
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\ED1L3.dll.config
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\ED1L3.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\ED1L3.pdb
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Antlr3.Runtime.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.Web.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Newtonsoft.Json.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Helpers.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Mvc.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Optimization.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Razor.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.WebPages.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.WebPages.Razor.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\TDA.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\WebGrease.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\TDA.pdb
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.Web.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Helpers.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Mvc.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Optimization.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.Razor.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.WebPages.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\System.Web.WebPages.Razor.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Antlr3.Runtime.pdb
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\Newtonsoft.Json.xml
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.Helpers.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.Mvc.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.Optimization.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.Razor.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.WebPages.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\obj\Debug\ED1L3.csprojResolveAssemblyReference.cache
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\obj\Debug\ED1L3.dll
+C:\Users\Luis Emilio\Desktop\Tercer Ciclo\Estructura de Datos\ED\EDLab03\ED1L3\ED1L3\obj\Debug\ED1L3.pdb
