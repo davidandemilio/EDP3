@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using TDA.Interfaces;
+using System.IO;
+
 namespace TDA
 {
 
@@ -38,6 +40,7 @@ namespace TDA
             return comparador(this.llave, _other);
         }
     }
+    Log nuevoLog = new Log();
 
     public class ArbolBinarioBusqueda<T, K>
     {
@@ -56,36 +59,36 @@ namespace TDA
             }
             else if (Raiz.CompareTo(_key) == 0)
             {
-                  if (Raiz.derecho == null)
-                  {
-                      Raiz = Raiz.izquierdo;
-                  }
-                  else if (Raiz.izquierdo == null)
-                  {
-                      Raiz = Raiz.derecho;
-                  }
-                  else
-                  {
-                   Nodo<T, K> nodo_Temp = Raiz.derecho;
-                      Nodo<T, K> padre_nodo_Temp = null;
-                      int cont = 0;
-                      while (nodo_Temp.izquierdo != null)
-                      {
-                          nodo_Temp = nodo_Temp.izquierdo;
-                          cont++;
-                      }
-                      padre_nodo_Temp = nodo_Temp.padre;
-                      Eliminar(nodo_Temp.llave);
-                      Raiz.valor = nodo_Temp.valor;
-                      Raiz.llave = nodo_Temp.llave;
+                if (Raiz.derecho == null)
+                {
+                    Raiz = Raiz.izquierdo;
+                }
+                else if (Raiz.izquierdo == null)
+                {
+                    Raiz = Raiz.derecho;
+                }
+                else
+                {
+                    Nodo<T, K> nodo_Temp = Raiz.derecho;
+                    Nodo<T, K> padre_nodo_Temp = null;
+                    int cont = 0;
+                    while (nodo_Temp.izquierdo != null)
+                    {
+                        nodo_Temp = nodo_Temp.izquierdo;
+                        cont++;
+                    }
+                    padre_nodo_Temp = nodo_Temp.padre;
+                    Eliminar(nodo_Temp.llave);
+                    Raiz.valor = nodo_Temp.valor;
+                    Raiz.llave = nodo_Temp.llave;
 
 
 
-                    
-                      
-                  }
 
-              
+
+                }
+
+
             }
             else
             {
@@ -98,6 +101,51 @@ namespace TDA
                     EliminacionInterna(Raiz, Raiz.izquierdo, _key, "izquierdo");
                 }
             }
+        }
+        public void Logg(string logMessage, TextWriter w)
+        {
+            w.Write("\r\nLog Entry: ");
+            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
+            w.WriteLine(" :");
+            w.WriteLine(" :{0}", logMessage);
+            w.WriteLine("---------------------");
+        }
+        public static void Dumplog(StreamReader r)
+        {
+            string line;
+            while ((line = r.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
+        public void incercion(StreamWriter W)
+        {
+            Logg("Incercion", W);
+        }
+        public void Eliminacion(StreamWriter W)
+        {
+            Logg("Eliminacion", W);
+        }
+        public void Balanceo(StreamWriter W)
+        {
+            Logg("Balanceo", W);
+        }
+        public void ROTSIMPDER(StreamWriter W)
+        {
+            Logg("Rotacion simpe a la derecha", W);
+        }
+        public void ROTSIMPIZQ(StreamWriter W)
+        {
+            Logg("Rotacion simpe a la izquierda", W);
+        }
+        public void ROTDOBDER(StreamWriter W)
+        {
+            Logg("Rotacion doble a la derecha", W);
+        }
+        public void ROTDOBIZQ(StreamWriter W)
+        {
+            Logg("Rotacion doble a la izquierda", W);
         }
 
         public void EliminacionInterna(Nodo<T, K> _padre, Nodo<T, K> _actual, K _key, string hijo)
