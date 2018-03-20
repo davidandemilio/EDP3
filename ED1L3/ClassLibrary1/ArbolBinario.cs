@@ -9,8 +9,6 @@ using System.IO;
 
 namespace TDA
 {
-
-
     public class Nodo<T, K> : IComparable<K>
     {
         public T valor { get; set; }
@@ -40,10 +38,10 @@ namespace TDA
             return comparador(this.llave, _other);
         }
     }
-    Log nuevoLog = new Log();
 
     public class ArbolBinarioBusqueda<T, K>
     {
+        System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Bitacora.txt");
         public Nodo<T, K> Raiz { get; set; }
 
         public ArbolBinarioBusqueda()
@@ -82,10 +80,6 @@ namespace TDA
                     Raiz.valor = nodo_Temp.valor;
                     Raiz.llave = nodo_Temp.llave;
 
-
-
-
-
                 }
 
 
@@ -101,52 +95,12 @@ namespace TDA
                     EliminacionInterna(Raiz, Raiz.izquierdo, _key, "izquierdo");
                 }
             }
-        }
-        public void Logg(string logMessage, TextWriter w)
-        {
-            w.Write("\r\nLog Entry: ");
-            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
-            w.WriteLine(" :");
-            w.WriteLine(" :{0}", logMessage);
-            w.WriteLine("---------------------");
-        }
-        public static void Dumplog(StreamReader r)
-        {
-            string line;
-            while ((line = r.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
+            Nuevolog.Eliminacion(w,r);
         }
 
-        public void incercion(StreamWriter W)
-        {
-            Logg("Incercion", W);
-        }
-        public void Eliminacion(StreamWriter W)
-        {
-            Logg("Eliminacion", W);
-        }
-        public void Balanceo(StreamWriter W)
-        {
-            Logg("Balanceo", W);
-        }
-        public void ROTSIMPDER(StreamWriter W)
-        {
-            Logg("Rotacion simpe a la derecha", W);
-        }
-        public void ROTSIMPIZQ(StreamWriter W)
-        {
-            Logg("Rotacion simpe a la izquierda", W);
-        }
-        public void ROTDOBDER(StreamWriter W)
-        {
-            Logg("Rotacion doble a la derecha", W);
-        }
-        public void ROTDOBIZQ(StreamWriter W)
-        {
-            Logg("Rotacion doble a la izquierda", W);
-        }
+        Log Nuevolog = new Log();
+        StreamWriter w = File.AppendText(@"C:\Bitacora.txt");
+        StreamReader r = File.OpenText(@"C:\Bitacora.txt");
 
         public void EliminacionInterna(Nodo<T, K> _padre, Nodo<T, K> _actual, K _key, string hijo)
         {
@@ -235,6 +189,7 @@ namespace TDA
                 {
                     EliminacionInterna(_actual, _actual.izquierdo, _key, "izquierdo");
                 }
+            Nuevolog.EliminacionINT(w, r);
         }
 
      
@@ -308,9 +263,9 @@ namespace TDA
                 }
 
                 nodo_inicio = nodo_inicio.padre;
-            }         
+            }
 
-
+            Nuevolog.ActualizarVal(w,r);
 
 
 
@@ -361,6 +316,7 @@ namespace TDA
                 Nodo_des.f_e = 0;
                 Nodo_des_der.f_e = 0;
             }
+            Nuevolog.ROTSIMPIZQ(w,r);
         }
 
 
@@ -426,6 +382,7 @@ namespace TDA
                     break;
             }
             Iz_Nodo_des_de.f_e = 0;
+            Nuevolog.ROTDOBIZQ(w,r);
         }
 
        
@@ -472,6 +429,7 @@ namespace TDA
                 Nododes.f_e = 0;
                 Nodo_des_iz.f_e = 0;
             }
+            Nuevolog.ROTSIMPDER(w,r);
 
         }
 
@@ -538,6 +496,7 @@ namespace TDA
                     break;
             }
             Nodo_des_iz_der.f_e = 0;
+            Nuevolog.ROTDOBDER(w,r);
         }
         public void EnOrden(RecorridoDelegate<T,K> _recorrido)
         {
@@ -554,6 +513,7 @@ namespace TDA
             {
                 InsercionInterna(Raiz, _nuevo);
             }
+            Nuevolog.incercion(w,r);
         }
 
         public Nodo<T, K> ObtenerRaiz()
@@ -602,6 +562,7 @@ namespace TDA
                     InsercionInterna(_actual.izquierdo, _nuevo);
                 }
             }
+            Nuevolog.incercionINT(w,r);
         } //Fin de inserción interna.
 
         private void RecorridoEnOrdenInterno(RecorridoDelegate<T, K> _recorrido, Nodo<T, K> _actual)

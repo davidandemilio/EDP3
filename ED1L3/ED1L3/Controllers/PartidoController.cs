@@ -49,11 +49,11 @@ namespace ED1L3.Controllers
             {
                 while (node != null)
                 {
-                    if (comparador_fechas(node.valor.FechaPartido, target) < 0)
+                    if (comparador_fechas(node.valor.FechaPartido, target) > 0)
                     {
                         node = node.izquierdo;
                     }
-                    else if (comparador_fechas(node.valor.FechaPartido, target) > 0)
+                    else if (comparador_fechas(node.valor.FechaPartido, target) < 0)
                     {
                         node = node.derecho;
                     }
