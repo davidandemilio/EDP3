@@ -204,6 +204,8 @@
     <Content Include="Views\Partidono\Create.cshtml" />
     <Content Include="Views\Partido\Delete.cshtml" />
     <Content Include="Views\Partidono\Delete.cshtml" />
+    <Content Include="Views\Partido\Search.cshtml" />
+    <Content Include="Views\Partidono\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
