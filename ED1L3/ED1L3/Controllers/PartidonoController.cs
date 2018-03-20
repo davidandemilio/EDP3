@@ -93,6 +93,49 @@ namespace ED1L3.Models
             }
         }
 
+        [HttpPost]
+        public void Search(int target)
+        {
+            bool seleccion = false;
+            Nodo<Partido, int> node = db.AB.Raiz;
+            if (node != null)
+            {
+                while (node != null)
+                {
+                    if (comparador_no(node.valor.Nopartido, target) < 0)
+                    {
+                        node = node.izquierdo;
+                    }
+                    else if (comparador_no(node.valor.Nopartido, target) > 0)
+                    {
+                        node = node.derecho;
+                    }
+                    else if (comparador_no(node.valor.Nopartido, target) == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        seleccion = true;
+                    }
+                }
+                List<string> lista = new List<string>();
+                lista.Add(node.valor.Nopartido.ToString());
+                lista.Add(node.valor.FechaPartido.ToString());
+                lista.Add(node.valor.Grupo);
+                lista.Add(node.valor.Pais_1);
+                lista.Add(node.valor.Pais_2);
+                lista.Add(node.valor.Estadio);
+                if (seleccion == false)
+                {
+                    Response.Write("Equipo encontrado: " + " " + "No. Partido: " + " " + lista[0].ToString() + " " + "Fecha de partido: " + " " + lista[1].ToString() + " " + "Grupo: " + " " + lista[2].ToString() + " " + "Pais_1" + " " + lista[3].ToString() + " " + "Pais_2" + " " + lista[4].ToString() + " " + "Estadio: " + " " + lista[5].ToString());
+                }
+                else
+                {
+                    Response.Write("Equipo no encontrado");
+                }
+            }
+        }
         // GET: Partidono/Delete/5
         public ActionResult Delete(int id)
         {

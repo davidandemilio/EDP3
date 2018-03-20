@@ -35,6 +35,55 @@ namespace ED1L3.Controllers
             return View();
         }
 
+
+        public ActionResult Search()
+        {
+            return View();
+        }
+        [HttpPost]
+        public void Search(DateTime target)
+        {
+            bool seleccion = false;
+            Nodo<Partido, DateTime> node = db.AB.Raiz;
+            if (node != null)
+            {
+                while (node != null)
+                {
+                    if (comparador_fechas(node.valor.FechaPartido, target) < 0)
+                    {
+                        node = node.izquierdo;
+                    }
+                    else if (comparador_fechas(node.valor.FechaPartido, target) > 0)
+                    {
+                        node = node.derecho;
+                    }
+                    else if (comparador_fechas(node.valor.FechaPartido, target) == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        seleccion = true;
+                    }
+                }
+                List<string> lista = new List<string>();
+                lista.Add(node.valor.Nopartido.ToString());
+                lista.Add(node.valor.FechaPartido.ToString());
+                lista.Add(node.valor.Grupo);
+                lista.Add(node.valor.Pais_1);
+                lista.Add(node.valor.Pais_2);
+                lista.Add(node.valor.Estadio);
+                if (seleccion == false)
+                {
+                    Response.Write("Equipo encontrado: " + " " + "No. Partido: " + " " + lista[0].ToString() + " " + "Fecha de partido: " + " " + lista[1].ToString() + " " + "Grupo: " + " " + lista[2].ToString() + " " + "Pais_1" + " " + lista[3].ToString() + " " + "Pais_2" + " " + lista[4].ToString() + " " + "Estadio: " + " " + lista[5].ToString());
+                }
+                else
+                {
+                    Response.Write("Equipo no encontrado");
+                }
+            }  
+        }
+
         // POST: Partido/Create
         [HttpPost]
         public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais_1,Pais_2,Estadio ")]Partido partido)
@@ -49,7 +98,6 @@ namespace ED1L3.Controllers
                 db.AB.Insertar(nueva_pais);
                 db.AB.EnOrden(asignar_comparacion);
                 db.AB.EnOrden(pasar_a_lista);
-
                 return RedirectToAction("Index");
             }
             catch
