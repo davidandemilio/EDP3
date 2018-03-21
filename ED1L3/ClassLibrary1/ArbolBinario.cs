@@ -39,9 +39,18 @@ namespace TDA
         }
     }
 
+   
+
     public class ArbolBinarioBusqueda<T, K>
     {
-        System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\Users\carlo\Desktop\Pablo Herrera\bit.txt");
+
+       public Log<K> Nuevolog = new Log<K>();
+
+        
+        StreamWriter w = File.AppendText(@"C:\Users\Public\bit.txt");
+         
+      
+
         public Nodo<T, K> Raiz { get; set; }
 
         public ArbolBinarioBusqueda()
@@ -82,7 +91,7 @@ namespace TDA
 
                 }
 
-
+                Nuevolog.Eliminacion(w,Raiz.llave);
             }
             else
             {
@@ -95,12 +104,10 @@ namespace TDA
                     EliminacionInterna(Raiz, Raiz.izquierdo, _key, "izquierdo");
                 }
             }
-            Nuevolog.Eliminacion(w,r);
+          
         }
 
-        Log Nuevolog = new Log();
-        StreamWriter w = File.AppendText(@"C:\Users\carlo\Desktop\Pablo Herrera\bit.txt");
-        StreamReader r = File.OpenText(@"C:C:\Users\carlo\Desktop\Pablo Herrera\bit.txt");
+    
 
         public void EliminacionInterna(Nodo<T, K> _padre, Nodo<T, K> _actual, K _key, string hijo)
         {
@@ -121,6 +128,7 @@ namespace TDA
                         actualizar_factores(_padre, hijo, false);
                        
                     }
+                   
                 }
                 //Borrar un nodo con un subarbol hijo
                 if (_actual.derecho == null && _actual.izquierdo != null)
@@ -176,9 +184,9 @@ namespace TDA
 
 
 
-                   
-                   
 
+
+                    Nuevolog.Eliminacion(w, _actual.llave);
                 }
                
             } else if (_actual.CompareTo(_key) < 0)
@@ -189,7 +197,7 @@ namespace TDA
                 {
                     EliminacionInterna(_actual, _actual.izquierdo, _key, "izquierdo");
                 }
-            Nuevolog.EliminacionINT(w, r);
+            
         }
 
      
@@ -265,7 +273,7 @@ namespace TDA
                 nodo_inicio = nodo_inicio.padre;
             }
 
-            Nuevolog.ActualizarVal(w,r);
+      
 
 
 
@@ -316,7 +324,7 @@ namespace TDA
                 Nodo_des.f_e = 0;
                 Nodo_des_der.f_e = 0;
             }
-            Nuevolog.ROTSIMPIZQ(w,r);
+            Nuevolog.ROTSIMPIZQ(w,nodo.llave);
         }
 
 
@@ -382,7 +390,7 @@ namespace TDA
                     break;
             }
             Iz_Nodo_des_de.f_e = 0;
-            Nuevolog.ROTDOBIZQ(w,r);
+            Nuevolog.ROTDOBIZQ(w, nodo.llave);
         }
 
        
@@ -429,7 +437,7 @@ namespace TDA
                 Nododes.f_e = 0;
                 Nodo_des_iz.f_e = 0;
             }
-            Nuevolog.ROTSIMPDER(w,r);
+            Nuevolog.ROTSIMPDER(w, nodo.llave);
 
         }
 
@@ -496,7 +504,7 @@ namespace TDA
                     break;
             }
             Nodo_des_iz_der.f_e = 0;
-            Nuevolog.ROTDOBDER(w,r);
+            Nuevolog.ROTDOBDER(w, nodo.llave);
         }
         public void EnOrden(RecorridoDelegate<T,K> _recorrido)
         {
@@ -508,12 +516,14 @@ namespace TDA
             if (Raiz == null)
             {
                 Raiz = _nuevo;
+
+                Nuevolog.incercion(w,_nuevo.llave);
             }
             else
             {
                 InsercionInterna(Raiz, _nuevo);
             }
-            Nuevolog.incercion(w,r);
+         
         }
 
         public Nodo<T, K> ObtenerRaiz()
@@ -540,8 +550,8 @@ namespace TDA
                     _actual.derecho = _nuevo;
                     _nuevo.padre = _actual;
                     actualizar_factores(_actual, "derecho", true);
-                   
-                    
+                    Nuevolog.incercion(w,_nuevo.llave);
+
                 }
                 else
                 {
@@ -555,14 +565,14 @@ namespace TDA
                     _actual.izquierdo = _nuevo;
                     _nuevo.padre = _actual;
                     actualizar_factores(_actual, "izquierdo", true);
-                  
+                    Nuevolog.incercion(w, _nuevo.llave);
                 }
                 else
                 {
                     InsercionInterna(_actual.izquierdo, _nuevo);
                 }
             }
-            Nuevolog.incercionINT(w,r);
+          
         } //Fin de inserción interna.
 
         private void RecorridoEnOrdenInterno(RecorridoDelegate<T, K> _recorrido, Nodo<T, K> _actual)

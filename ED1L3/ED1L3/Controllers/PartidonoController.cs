@@ -18,8 +18,10 @@ namespace ED1L3.Models
     {
         DefaultConnection<Partido, int> db = DefaultConnection<Partido, int>.getInstance;
 
+    
         public ActionResult CargaArchivo(HttpPostedFileBase archivo)
         {
+            db.AB.Nuevolog.convsersor = conversorno;
             List<Nodo<Partido, int>> nodos_a_insertar = new List<Nodo<Partido, int>>();
             Nodo<Partido, int> nuevo;
 
@@ -39,6 +41,8 @@ namespace ED1L3.Models
 
             return RedirectToAction("Index");
         }
+
+
 
         // GET: Partidono
         public ActionResult Index()
@@ -62,8 +66,13 @@ namespace ED1L3.Models
         [HttpPost]
         public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais1,Pais2,Estadio ")]Partido partido)
         {
+            db.AB.Nuevolog.convsersor = conversorno;
+
             try
             {
+              
+                
+               
                 // TODO: Add insert logic here
                 Nodo<Partido, int> nueva_pais = new Nodo<Partido, int>(partido, null);
                 nueva_pais.valor = partido;
@@ -118,6 +127,21 @@ namespace ED1L3.Models
             }
         }
 
+        public string conversorno(int key)
+        {
+
+            return key.ToString();
+        }
+
+        public void Generar_Bitacora()
+        {
+
+            db.AB.Nuevolog.close();
+        }
+        public ActionResult Search()
+        {
+            return View();
+        }
         [HttpPost]
         public void Search(int target)
         {
@@ -148,8 +172,8 @@ namespace ED1L3.Models
                 lista.Add(node.valor.Nopartido.ToString());
                 lista.Add(node.valor.FechaPartido.ToString());
                 lista.Add(node.valor.Grupo);
-                lista.Add(node.valor.Pais_1);
-                lista.Add(node.valor.Pais_2);
+                lista.Add(node.valor.Pais1);
+                lista.Add(node.valor.Pais2);
                 lista.Add(node.valor.Estadio);
                 if (seleccion == false)
                 {

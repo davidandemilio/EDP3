@@ -4,77 +4,75 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TDA.Interfaces;
 
 namespace TDA
 {
-    class Log
+    public class Log<K>
     {
-        public void Logg(string logMessage, TextWriter w)
+
+        public Convertirastring<K> convsersor;
+        StreamWriter f;
+        public void Logg(string logMessage, StreamWriter w)
         {
-            w.Write("\r\nLog Entry: ");
-            w.WriteLine("{0} {1}", DateTime.Now.ToLongTimeString(), DateTime.Now.ToLongDateString());
-            w.WriteLine(" :");
-            w.WriteLine(" :{0}", logMessage);
-            w.WriteLine("---------------------");
-        }
-        public static void Dumplog(StreamReader r)
-        {
-            string line;
-            while ((line = r.ReadLine()) != null)
-            {
-                Console.WriteLine(line);
-            }
+
+            f = w;
+           
+            w.WriteLine(logMessage);
+           
         }
 
-        public void incercion(StreamWriter W, StreamReader R)
+
+        public void close( )
         {
-            Logg("Incercion", W);
-            Dumplog(R);
+
+
+            f.Close();
+
+
         }
-        public void incercionINT(StreamWriter W, StreamReader R)
+
+        public void incercion(StreamWriter W,K llave)
         {
-            Logg("Incercion Interna", W);
-            Dumplog(R);
+            Logg("Incercion: "+ convsersor(llave), W);
+         
         }
-        public void Eliminacion(StreamWriter W, StreamReader R)
+   
+        public void Eliminacion(StreamWriter W, K llave)
         {
-            Logg("Eliminacion", W);
-            Dumplog(R);
+            Logg("Eliminacion: " + convsersor(llave), W);
+
         }
-        public void EliminacionINT(StreamWriter W, StreamReader R)
+    
+        public void ActualizarVal(StreamWriter W, K llave)
         {
-            Logg("Eliminacion interna", W);
-            Dumplog(R);
+            Logg("Actualizar factores de Balaceo: " + convsersor(llave), W);
+ 
         }
-        public void ActualizarVal(StreamWriter W, StreamReader R)
+        public void Balanceo(StreamWriter W, K llave)
         {
-            Logg("Actualizar factores de Balaceo", W);
-            Dumplog(R);
+            Logg("Balanceo: " + convsersor(llave), W);
+      
         }
-        public void Balanceo(StreamWriter W, StreamReader R)
+        public void ROTSIMPDER(StreamWriter W, K llave)
         {
-            Logg("Balanceo", W);
-            Dumplog(R);
+            Logg("Rotacion simpe a la derecha: " + convsersor(llave), W);
+     
         }
-        public void ROTSIMPDER(StreamWriter W, StreamReader R)
+        public void ROTSIMPIZQ(StreamWriter W, K llave)
         {
-            Logg("Rotacion simpe a la derecha", W);
-            Dumplog(R);
+            Logg("Rotacion simpe a la izquierda: " + convsersor(llave), W);
+     
         }
-        public void ROTSIMPIZQ(StreamWriter W, StreamReader R)
+        public void ROTDOBDER(StreamWriter W, K llave)
         {
-            Logg("Rotacion simpe a la izquierda", W);
-            Dumplog(R);
+            Logg("Rotacion doble a la derecha: " + convsersor(llave), W);
+       
         }
-        public void ROTDOBDER(StreamWriter W, StreamReader R)
+        public void ROTDOBIZQ(StreamWriter W, K llave)
         {
-            Logg("Rotacion doble a la derecha", W);
-            Dumplog(R);
-        }
-        public void ROTDOBIZQ(StreamWriter W, StreamReader R)
-        {
-            Logg("Rotacion doble a la izquierda", W);
-            Dumplog(R);
+            Logg("Rotacion doble a la izquierda: " + convsersor(llave), W);
+    
         }
     }
 }

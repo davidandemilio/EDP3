@@ -20,6 +20,7 @@ namespace ED1L3.Controllers
 
         public ActionResult CargaArchivo(HttpPostedFileBase archivo)
         {
+            db.AB.Nuevolog.convsersor = conversor;
             List<Nodo<Partido, DateTime>> nodos_a_insertar = new List<Nodo<Partido, DateTime>>();
             Nodo<Partido, DateTime> nuevo;
 
@@ -58,7 +59,15 @@ namespace ED1L3.Controllers
             return View();
         }
 
+        public string conversor(DateTime key) {
 
+            return key.ToString();
+        }
+
+        public void Generar_Bitacora() {
+
+            db.AB.Nuevolog.close();
+        }
         public ActionResult Search()
         {
             return View();
@@ -93,8 +102,8 @@ namespace ED1L3.Controllers
                 lista.Add(node.valor.Nopartido.ToString());
                 lista.Add(node.valor.FechaPartido.ToString());
                 lista.Add(node.valor.Grupo);
-                lista.Add(node.valor.Pais_1);
-                lista.Add(node.valor.Pais_2);
+                lista.Add(node.valor.Pais1);
+                lista.Add(node.valor.Pais2);
                 lista.Add(node.valor.Estadio);
                 if (seleccion == false)
                 {
@@ -111,6 +120,7 @@ namespace ED1L3.Controllers
         [HttpPost]
         public ActionResult Create([Bind(Include = "Nopartido,FechaPartido,Grupo,Pais1,Pais2,Estadio ")]Partido partido)
         {
+            db.AB.Nuevolog.convsersor = conversor;
             try
             {
                 // TODO: Add insert logic here

@@ -10,8 +10,9 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <p>
-    @Html.ActionLink("Buscar partidos por su fecha", "Search")
+    @Html.ActionLink("Buscar partidos por su numero", "Search")
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -71,5 +72,13 @@
     <div class="form-group">
         <input type="file" name="archivo" />
         <input type="submit" value="Importar" />
+    </div>
+}
+
+@using (Html.BeginForm("Generar_Bitacora", "Partidono", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+
+        <input type="submit" value="Generar" />
     </div>
 }

@@ -79,3 +79,11 @@
     </div>
 }
 
+@using (Html.BeginForm("Generar_Bitacora", "Partido", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+       
+        <input type="submit" value="Generar" />
+    </div>
+}
+
